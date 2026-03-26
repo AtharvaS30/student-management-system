@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+<h1>Add Student</h1>
+
+<form method="POST">
+
+    Name:
+    <input type="text" name="name" required>
+
+    PRN:
+    <input type="text" name="prn" maxlength="12" required>
+
+    Course:
+    <select name="course">
+        <option value="CSE">CSE</option>
+        <option value="CSE">CSE AIML</option>
+        <option value="CTIS">CTIS</option>
+        <option value="Civil">Civil</option>
+        <option value="Mechanical">Mechanical</option>
+        <option value="Aerospace">Aerospace</option>
+        <option value="Electrical">Electrical</option>
+        <option value="Robotics">Robotics</option>
+    </select>
+
+    <button type="submit">Add Student</button>
+</form>
+
+</div>
+
+</body>
+</html>

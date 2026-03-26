@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Student Management System</h1>
+
+<form method="GET" action="/">
+    <input type="text" name="search" placeholder="Search by name, PRN, course">
+    <button type="submit">Search</button>
+</form>
+
+<br>
+
+<a href="/add">Add Student</a>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>PRN</th>
+        <th>Course</th>
+        <th>Action</th>
+    </tr>
+
+    {% for student in students %}
+    <tr>
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.prn }}</td>
+        <td>{{ student.course }}</td>
+        <td>
+            <a href="/edit/{{ student.id }}">Edit</a>
+            <a href="/delete/{{ student.id }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+
+</body>
+</html>

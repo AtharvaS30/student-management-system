@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+<h1>Edit Student</h1>
+
+<form method="POST">
+
+    Name:
+    <input type="text" name="name" value="{{ student.name }}" required>
+
+    PRN:
+    <input type="text" name="prn" value="{{ student.prn }}" pattern="[0-9]{12}" required>
+
+    Course:
+    <select name="course">
+        <option value="CSE" {% if student.course == 'CSE' %}selected{% endif %}>CSE</option>
+        <option value="CSE AIML" {% if student.course == 'CSE AIML' %}selected{% endif %}>CSE AIML</option>
+        <option value="CTIS" {% if student.course == 'CTIS' %}selected{% endif %}>CTIS</option>
+        <option value="Civil" {% if student.course == 'Civil' %}selected{% endif %}>Civil</option>
+        <option value="Mechanical" {% if student.course == 'Mechanical' %}selected{% endif %}>Mechanical</option>
+        <option value="Aerospace" {% if student.course == 'Aerospace' %}selected{% endif %}>Aerospace</option>
+        <option value="Electrical" {% if student.course == 'Electrical' %}selected{% endif %}>Electrical</option>
+        <option value="Robotics" {% if student.course == 'Robotics' %}selected{% endif %}>Robotics</option>
+    </select>
+
+    <button type="submit">Update Student</button>
+</form>
+
+</div>
+
+</body>
+</html>
