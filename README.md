@@ -4,7 +4,7 @@ A full-stack web application to manage student records efficiently with a clean 
 
 ---
 
-##  Features
+## Features
 
 - Add, Edit, Delete students (CRUD operations)
 - Search students by Name, PRN, or Course
